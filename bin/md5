@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+var crypto = require('crypto');
+var fs = require('fs');
+var path = process.argv[2];
+
+if( !path ) {
+    console.log('Please specify a path');
+}
+else fs.readFile( path, function( err, data ) {
+    if( err ) {
+        console.log( err );
+    }
+    else {
+        var md5 = crypto.createHash('md5');
+        md5.update( data );
+        console.log( md5.digest('hex') );
+    }
+});

@@ -1,0 +1,13 @@
+{
+    "name":"semo",
+    "private":true,
+    "version":"1.0.2",
+    "dependencies":{
+        "agentkeepalive":"=0.2.3",
+        "log4js":">=0.6.21",
+        "mime":">=1.2.6",
+        "node-uuid":">=1.4.1",
+        "q":">=1.1.1",
+        "temp":">=0.8.1"
+    }
+}
