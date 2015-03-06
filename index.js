@@ -1,10 +1,28 @@
 var mods = {
-    crypto: require('crypto'),
-    fs:     require('./lib/fs'),
-    http:   require('./lib/http'),
-    keygen: require('./lib/keygen'),
-    rqueue: require('./lib/request-queue')
+    crypto:     require('crypto'),
+    fs:         require('./lib/fs'),
+    http:       require('./lib/http'),
+    keygen:     require('./lib/keygen'),
+    semaphore:  require('./lib/semaphore'),
+    shareMutex: require('./lib/share-mutex')
 }
+
+/**
+ * Concurrency related functions.
+ */
+var concurrent = {
+    /**
+     * Create a share mutex. Allows efficient calling of operation functions,
+     * and sharing their results between multiple calling processes.
+     */
+    shareMutex: mods.shareMutex,
+    /**
+     * Create a semaphore. Manages calls to resources that have limits on the
+     * total allowed number of concurrent calls.
+     */
+    semaphore: mods.semaphore
+}
+exports.concurrent = concurrent;
 
 /** File system commands. */
 // RENAMED commands -> fs
@@ -49,13 +67,6 @@ var date = {
     }
 }
 exports.date = date;
-
-/**
- * Return a new request queue instance.
- */
-exports.requestQueue = function() {
-    return mods.rqueue();
-}
 
 /**
  * Return a new key generator function using the specified method.
