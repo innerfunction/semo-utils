@@ -1,4 +1,5 @@
 var mods = {
+    bus:        require('./lib/bus'),
     crypto:     require('crypto'),
     fs:         require('./lib/fs'),
     http:       require('./lib/http'),
@@ -6,6 +7,11 @@ var mods = {
     semaphore:  require('./lib/semaphore'),
     shareMutex: require('./lib/share-mutex')
 }
+
+/**
+ * Application bus. Allows application components to be registered and started.
+ */
+exports.bus = mods.bus;
 
 /**
  * Concurrency related functions.
