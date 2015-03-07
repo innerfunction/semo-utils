@@ -1,7 +1,7 @@
 {
-    "name":"semo",
+    "name":"semo-utils",
     "private":true,
-    "version":"1.0.2",
+    "version":"0.0.8",
     "dependencies":{
         "agentkeepalive":"=0.2.3",
         "log4js":">=0.6.21",

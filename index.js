@@ -5,7 +5,8 @@ var mods = {
     http:       require('./lib/http'),
     keygen:     require('./lib/keygen'),
     semaphore:  require('./lib/semaphore'),
-    shareMutex: require('./lib/share-mutex')
+    shareMutex: require('./lib/share-mutex'),
+    sqz:        require('./lib/sqz')
 }
 
 /**
@@ -80,3 +81,9 @@ exports.date = date;
 exports.keyGen = function( method ) {
     return mods.keygen.init( method );
 }
+
+/**
+ * Sequelize utility functions.
+ */
+exports.sqz = mods.sqz;
+
